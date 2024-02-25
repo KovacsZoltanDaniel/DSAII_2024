@@ -10,19 +10,21 @@
 void read(int *&array, int &n, ifstream &f) {
     if(!f){
         cout << "File not found" << endl;
+        return;
     }
     f >> n;
     array = new int[n];
     for (int i = 0; i < n; ++i) {
         f >> array[i];
     }
-
 }
 
 void print_array(int *a, int n) {
+    cout << "A tomb elemei: " << endl;
     for (int i = 0; i < n; ++i) {
         cout << a[i] << " ";
     }
+    cout << endl;
 }
 
 int linearSearch(int *array, int size, int target) {
@@ -31,7 +33,7 @@ int linearSearch(int *array, int size, int target) {
             return i;
         }
     }
-    return 0;
+    return -1;
 }
 
 int binarySearch(const int *array, int size, int target) {
@@ -42,8 +44,14 @@ int binarySearch(const int *array, int size, int target) {
         if (array[middle] == target) {
             return middle;
         }
+        if (array[middle] < target) {
+            left = middle + 1;
+        }
+        if (array[middle] > target) {
+            right = middle - 1;
+        }
     }
-    return 0;
+    return -1;
 }
 
 int lnko(int a, int b) {
@@ -51,11 +59,23 @@ int lnko(int a, int b) {
         if (a > b) {
             a -= b;
         }
+        if (b > a) {
+            b -= a;
+        }
     }
+
     return 0;
 }
 
 int lkkt(int a, int b) {
-
-    return 0;
+    while (a != b) {
+        if (a > b) {
+            a -= b;
+        }
+        if (b > a) {
+            b -= a;
+        }
+    }
+    return a;
 }
+
