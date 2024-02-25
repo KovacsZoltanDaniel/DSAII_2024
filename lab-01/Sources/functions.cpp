@@ -4,7 +4,8 @@
 
 #include "../Headers/functions.h"
 #include "iostream"
-#include "fstream"
+using namespace std;
+#include <fstream>
 
 
 void read(int *&array, int &n, ifstream &f) {
@@ -55,27 +56,15 @@ int binarySearch(const int *array, int size, int target) {
 }
 
 int lnko(int a, int b) {
-    while (a != b) {
-        if (a > b) {
-            a -= b;
-        }
-        if (b > a) {
-            b -= a;
-        }
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-
-    return 0;
+    return a;
 }
 
 int lkkt(int a, int b) {
-    while (a != b) {
-        if (a > b) {
-            a -= b;
-        }
-        if (b > a) {
-            b -= a;
-        }
-    }
-    return a;
+    return (a * b) / lnko(a, b);
 }
 
