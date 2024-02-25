@@ -85,9 +85,7 @@ void selection_sort(int *a, int n) {
             }
         }
         if (min_index != i) {
-            int temp = a[i];
-            a[i] = a[min_index];
-            a[min_index] = temp;
+            swap(a[min_index],a[i]);
         }
     }
 }
@@ -107,13 +105,12 @@ void minimselection_sort(int *a, int n) {
         }
     }
 }
+
 void bubble_sort(int *a, int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (a[j] > a[j + 1]) {
-                int temp = a[j];
-                a[j] = a[j + 1];
-                a[j + 1] = temp;
+                swap(a[j],a[j+1]);
             }
         }
     }
