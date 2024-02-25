@@ -68,3 +68,53 @@ int lkkt(int a, int b) {
     return (a * b) / lnko(a, b);
 }
 
+int power(int b, int e) {
+    int sum = 1;
+    for (int i = 0; i < e; ++i) {
+        sum *= b;
+    }
+    return sum;
+}
+
+void selection_sort(int *a, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int min_index = i;
+        for (int j = i + 1; j < n; j++) {
+            if (a[j] < a[min_index]) {
+                min_index = j;
+            }
+        }
+        if (min_index != i) {
+            int temp = a[i];
+            a[i] = a[min_index];
+            a[min_index] = temp;
+        }
+    }
+}
+
+void minimselection_sort(int *a, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        int max_index = i;
+        for (int j = i + 1; j < n; j++) {
+            if (a[j] > a[max_index]) {
+                max_index = j;
+            }
+        }
+        if (max_index != i) {
+            int temp = a[i];
+            a[i] = a[max_index];
+            a[max_index] = temp;
+        }
+    }
+}
+void bubble_sort(int *a, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+}
