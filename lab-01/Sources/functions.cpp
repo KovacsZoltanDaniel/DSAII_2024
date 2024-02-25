@@ -99,9 +99,7 @@ void minimselection_sort(int *a, int n) {
             }
         }
         if (max_index != i) {
-            int temp = a[i];
-            a[i] = a[max_index];
-            a[max_index] = temp;
+            swap(a[i],a[max_index]);
         }
     }
 }
