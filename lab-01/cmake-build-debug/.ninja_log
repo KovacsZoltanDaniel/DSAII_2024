@@ -1,0 +1,6 @@
+# ninja log v5
+1	969	7305854380764365	CMakeFiles/lab_01.dir/Sources/main.cpp.obj	ee6e93e3f8350749
+10	976	7305854380834369	CMakeFiles/lab_01.dir/Sources/functions.cpp.obj	6369f37d2011069e
+976	1171	7305854382742139	lab_01.exe	cdaed591018339f7
+4	795	7305855369449650	CMakeFiles/lab_01.dir/Sources/main.cpp.obj	ee6e93e3f8350749
+796	926	7305855370729736	lab_01.exe	cdaed591018339f7
