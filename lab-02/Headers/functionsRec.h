@@ -19,4 +19,7 @@ int lnkoArrayRec(int *a, int n);
 void digitNumbers(int n);
 int inverseNumber(int n,int fn);
 
+int teszt1(int a, int b);
+
+
 #endif //LAB_02_FUNCTIONSREC_H
