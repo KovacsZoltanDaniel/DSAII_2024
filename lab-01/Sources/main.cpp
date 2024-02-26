@@ -11,18 +11,11 @@ int main() {
     read(array, n, f);
     print_array(array, n);
     cout << "*****************************************************" << endl;
-    linearSearch(array,n,8);
+    result = linearSearch(array,n,8);
     if (result != -1) {
         cout << "Linear Search for target " << 8 << " found at Index: " << result << endl;
     } else {
         cout << "Linear Search for target " << 8 << " not found" << endl;
-    }
-    cout << "*****************************************************" << endl;
-    //result = binarySearch(array2,m,7);
-    if (result != -1) {
-        cout << "Binary Search for target " << 7 << " found! at Index: " << result << endl;
-    } else {
-        cout << "Binary Search for target " << 7 << " not found" << endl;
     }
     cout << "*****************************************************" << endl;
     cout << "LNKO: " << lnko(array[2],array[4]) << endl;
@@ -39,11 +32,11 @@ int main() {
     bubble_sort(array,n);
     print_array(array,n);
     cout << "*****************************************************" << endl;
-    result = linearSearch(array,n,8);
+    result = binarySearch(array,n,7);
     if (result != -1) {
-        cout << "Linear Search for target " << 8 << " found at Index: " << result << endl;
+        cout << "Binary Search for target " << 7 << " found! at Index: " << result << endl;
     } else {
-        cout << "Linear Search for target " << 8 << " not found" << endl;
+        cout << "Binary Search for target " << 7 << " not found" << endl;
     }
     return 0;
 }

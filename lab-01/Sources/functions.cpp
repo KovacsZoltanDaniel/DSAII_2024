@@ -4,8 +4,9 @@
 
 #include "../Headers/functions.h"
 #include "iostream"
+#include "fstream"
 using namespace std;
-#include <fstream>
+
 
 
 void read(int *&array, int &n, ifstream &f) {
@@ -113,3 +114,5 @@ void bubble_sort(int *a, int n) {
         }
     }
 }
+
+
