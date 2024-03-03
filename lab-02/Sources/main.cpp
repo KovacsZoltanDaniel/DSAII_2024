@@ -16,8 +16,14 @@ int main() {
     cout << lnkoRec(8,12) << endl;
     cout << lkktRec(18,35,18,35) << endl;
     cout << powerRec(2,3) << endl;
+    cout << lnkoArrayRec(array,n) << endl;
+    digitNumbersRec(198);
+    cout << endl;
+    cout << inverseNumber(5,7) << endl;
 
     //teszt
+    cout << "*************************" << endl;
+    cout << "Teszt:" << endl;
     int a = 2;
     int b = 3;
     int result1 = teszt1(a,b);

@@ -14,12 +14,14 @@ int lnkoRec(int a, int b) {
 }
 
 int lkktRec(int a, int b, int a1, int b1) {
-    if (a == b)
-        return a;
-    else if (a > b)
-        return lkktRec(a - b, b, a1, b1);
-    else
-        return lkktRec(a, b - a, a1, b1);
+    if (a != b) {
+        if (a > b) {
+            return lkktRec(a, b + b1, a1, b1);
+        } else {
+            return lkktRec(a + a1, b, a1, b1);
+        }
+    }
+    return a;
 }
 
 int powerRec(int b, int e) {
@@ -31,11 +33,10 @@ int powerRec(int b, int e) {
 
 
 void readArrayRec(int *a, int n, ifstream &f) {
-    if (n <= 0) {
-        return;
+    if (n >= 0) {
+        readArrayRec(a, (n - 1), f);
+        f >> a[n];
     }
-    f >> a[n - 1];
-    readArrayRec(a, n - 1, f);
 }
 
 void printArrayRec(int *a, int n) {
@@ -71,3 +72,27 @@ int teszt1(int a, int b) {
     return sum;
 }
 
+void digitNumbersRec(int n) {
+    if(n < 10){
+        cout << n << " ";
+        return;
+    }
+    digitNumbersRec(n/10);
+    cout << n % 10 << " ";
+}
+
+int lnkoArrayRec(int *a, int n) {
+    if (n == 1) {
+        return a[0];
+    } else {
+        return lnkoRec(a[n - 1], lnkoArrayRec(a, n - 1));
+    }
+}
+
+int inverseNumber(int n, int fn) {
+    if (n == 1) {
+        return 1;
+    } else {
+        return ((fn - fn / n) * inverseNumber(fn % n, fn)) % fn;
+    }
+}
