@@ -11,15 +11,16 @@ int main() {
     cout << "A tomb elemei:" << endl;
     printArrayRec(array, n);
     cout << endl;
-    cout << sumArrayRec(array, n) << endl;
-    cout << maxArrayRec(array, n, array[0]) << endl;
-    cout << lnkoRec(8,12) << endl;
-    cout << lkktRec(18,35,18,35) << endl;
-    cout << powerRec(2,3) << endl;
-    cout << lnkoArrayRec(array,n) << endl;
+    cout << "Osszeg: " << sumArrayRec(array, n) << endl;
+    cout << "Maximum: " << maxArrayRec(array, n, array[0]) << endl;
+    cout << "Lnko tomb: " << lnkoArrayRec(array,n) << endl;
+    cout << "Sima lnko: " << lnkoRec(8,12) << endl;
+    cout << "Lkkt: " << lkktRec(8,16,8,16) << endl;
+    cout << "Hatvany: " << powerRec(2,3) << endl;
+    cout << "Szamjegyei a 198-nak: " ;
     digitNumbersRec(198);
     cout << endl;
-    cout << inverseNumber(5,7) << endl;
+    cout << "Inverz: " << inverseNumber(5,7) << endl;
 
     //teszt
     cout << "*************************" << endl;

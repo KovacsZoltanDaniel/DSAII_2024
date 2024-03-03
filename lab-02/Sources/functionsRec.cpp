@@ -82,13 +82,11 @@ void digitNumbersRec(int n) {
 }
 
 int lnkoArrayRec(int *a, int n) {
-    if (n == 1) {
-        return a[0];
-    } else {
-        return lnkoRec(a[n - 1], lnkoArrayRec(a, n - 1));
-    }
+    if (n == 1)
+        return *a;
+    else
+        return lnkoRec(*a, lnkoArrayRec(a + 1, n - 1));
 }
-
 int inverseNumber(int n, int fn) {
     if (n == 1) {
         return 1;
