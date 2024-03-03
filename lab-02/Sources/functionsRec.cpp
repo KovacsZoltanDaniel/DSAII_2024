@@ -43,8 +43,8 @@ void printArrayRec(int *a, int n) {
     if (n <= 0) {
         return;
     }
-    cout << a[n - 1] << " ";
     printArrayRec(a, n - 1);
+    cout << a[n - 1] << " ";
 }
 
 int sumArrayRec(int *a, int n) {
@@ -73,11 +73,11 @@ int teszt1(int a, int b) {
 }
 
 void digitNumbersRec(int n) {
-    if(n < 10){
+    if (n < 10) {
         cout << n << " ";
         return;
     }
-    digitNumbersRec(n/10);
+    digitNumbersRec(n / 10);
     cout << n % 10 << " ";
 }
 
@@ -87,6 +87,7 @@ int lnkoArrayRec(int *a, int n) {
     else
         return lnkoRec(*a, lnkoArrayRec(a + 1, n - 1));
 }
+
 int inverseNumber(int n, int fn) {
     if (n == 1) {
         return 1;
