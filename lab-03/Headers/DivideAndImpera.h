@@ -12,5 +12,6 @@ using namespace std;
 void Read(int *&array, int &n, ifstream &f);
 void Print(int *a, int n);
 void mergesort(int *a, int i, int j);
-void osszefesul(int *a, int i, int k, int j);
+void osszefesul(int *x, int bal, int kozep, int jobb);
+int maximum(int *a, int i, int j);
 #endif //DSAII_2024_DIVIDEANDIMPERA_H
