@@ -33,12 +33,14 @@ bool igeretes(int *x, int k) {
 
 
 void kerekpar(int *x, int n, int k) {
-    for (x[k] = 0; x[k] <= 9; x[k]++) {
-        if( k < n){
-            kerekpar(x,n,k+1);
-        }
-        else{
-            kiir(x,n);
+    for (x[k] = 1; x[k] <= 7; x[k]++) {
+        if (x[k] % 2 == 1) {
+            if( k < n){
+                kerekpar(x,n,k+1);
+            }
+            else{
+                kiir(x,n);
+            }
         }
     }
 }
@@ -111,25 +113,4 @@ void Variacio(int * array, int n, int k, int index)
         }
 }
 
-//void kiralyno(int *x, int n, int k) {
-//    for(x[k] = 1; x[k] <= n; ++x[k]){
-//        if(igereteskiralyno(x,k)){
-//            if(k < n){
-//                kiralyno(x,n,k+1);
-//            }
-//            else{
-//                kiir(x,n);
-//            }
-//        }
-//    }
-//}
 
-//bool igereteskiralyno(int *x, int k) {
-//    for (int i = 1; i < k-1 ; ++i) {
-//        if(x[i] == x[k] || ((k-i) == |x[k] - x[i] | )){
-//            return false;
-//        }
-//    }
-//    return true;
-//}
-//
