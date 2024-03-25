@@ -9,15 +9,18 @@ void Bt(int *x, int n, int k) {
         if(k < n - 1){
             Bt(x, n, k+1);
         }else{
-            kiir(x, n);
+            //kiir(x, n);
         }
     }
 }
 
-void kiir(int *array, int n){
+void kiir(int *array, int n, int *array2) {
+    int sum = 0;
     for (int i = 1; i <= n; ++i) {
-        cout << array[i] << " ";
+        cout << array2[array[i]-1] << " ";
+        sum += array2[array[i]-1];
     }
+    cout << "Suma: " << sum;
     cout << endl;
 }
 
@@ -39,7 +42,7 @@ void kerekpar(int *x, int n, int k) {
                 kerekpar(x,n,k+1);
             }
             else{
-                kiir(x,n);
+               // kiir(x,n);
             }
         }
     }
@@ -51,7 +54,7 @@ void descartes(int *x, int n, int k) {
             descartes(x,n,k+1);
         }
         else{
-            kiir(x,n);
+           // kiir(x,n);
         }
     }
 }
@@ -64,13 +67,13 @@ void permutacio(int *x, int n, int k) {
                 permutacio(x,n,k+1);
             }
             else{
-                kiir(x,n);
+              //  kiir(x,n);
             }
         }
     }
 }
 
-bool ellenorizKombinacio(int * array, int index)
+bool ellenorizKombinacio(int *array, int index)
 {
     for (int i = 1; i <= index - 1; i++)
         if(array[i] >= array[index])
@@ -78,16 +81,15 @@ bool ellenorizKombinacio(int * array, int index)
     return true;
 }
 
-void Kombinacio(int * array, int n, int k, int index)
+void Kombinacio(int *array, int n, int k, int index, int *array2)
 {
-    if (index == k + 1)
-        kiir(array, k);
+    if (index == k+1)
+        kiir(array, k,array2);
     else
-        for (int i=1;i<=n;i++)
+        for ( array[index]=1;array[index]<=n;array[index]++)
         {
-            array[index]=i;
             if (ellenorizKombinacio(array, index))
-                Kombinacio(array, n, k, index + 1);
+                Kombinacio(array, n, k, index + 1,array2);
         }
 }
 
@@ -102,8 +104,8 @@ bool ellenorizVariacio(int * array, int index)
 
 void Variacio(int * array, int n, int k, int index)
 {
-    if (index == k + 1)
-        kiir(array, k);
+    if (index == k + 1){}
+       // kiir(array, k);
     else
         for (int i=1;i<=n;i++)
         {
@@ -151,3 +153,4 @@ bool igereteskiralyno(int *x, int k) {
     }
     return true;
 }
+
