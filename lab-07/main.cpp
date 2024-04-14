@@ -2,10 +2,6 @@
 #include "GreedyBackT.h"
 #include <vector>
 
-struct Food {
-    string name;
-    int calories_per_100g;
-};
 
 int main() {
     int n =5;
@@ -48,17 +44,16 @@ int main() {
     delete[] a;
 
     cout << "\n**************************************************\n" << endl;
-    vector<Food> foods = {
-            {"spenotos gomba", 200},
-            {"zoldseg a lerben", 250},
-            {"dioval toltott korte", 300},
-            {"vanilias es kokuszos Panna cotta", 400},
-            {"fuges salata", 350},
-            {"citromtorta", 500}
-    };
 
-    for (auto food : foods) {
-        cout << food.name << " " << food.calories_per_100g << endl;
+    vector<Food> foods = readFoodsFromFile("foods.txt");
+    for (const auto& food : foods) {
+        cout << food.name << " " << food.calories << endl;
     }
+
+    int maxCalories = 2000;
+
+    vector<pair<string, int>> menu = selectMenu(foods, maxCalories);
+
+    printMenu(menu);
     return 0;
 }
