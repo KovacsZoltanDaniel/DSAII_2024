@@ -32,7 +32,32 @@ int G(int i, int j, int s, int **a, int n) {
     return s;
 }
 
-Food::Food(string n, int c) : name(n), calories(c) {}
+Food::Food(string n, int c,float g) : name(n), calories(c), gramm(g){}
+
+
+vector<Food> readFoodsFromFile(const string& filename) {
+    vector<Food> foods;
+    ifstream file(filename);
+    if (file.is_open()) {
+        string line;
+        while (getline(file, line)) {
+            istringstream iss(line);
+            string name;
+            int calories;
+            float size;
+            if (iss >> name >> calories >> size) {
+                foods.push_back(Food(name, calories, size));
+            }
+        }
+        file.close();
+    } else {
+        exit(-1);
+    }
+    return foods;
+}
+
+
+
 
 vector<pair<string, int>> selectMenu(const vector<Food>& foods, int maxCalories) {
     vector<pair<string, int>> menu;
@@ -53,52 +78,4 @@ vector<pair<string, int>> selectMenu(const vector<Food>& foods, int maxCalories)
     }
 
     return menu;
-}
-
-void printMenu(const vector<pair<string, int>>& menu) {
-    cout << "Panna menuje:" << endl;
-    for (const auto& item : menu) {
-        cout << "- " << item.first << " (" << item.second << " kcal)" << endl;
-    }
-}
-
-vector<Food> readFoodsFromFile(const string& filename) {
-    vector<Food> foods;
-    ifstream file(filename);
-    string line;
-
-    if (file.is_open()) {
-        while (getline(file, line)) {
-            stringstream ss(line);
-            string name;
-            int calories ;
-            string word;
-            while (ss >> word) {
-                // Ellenőrizzük, hogy a szó szám-e
-                bool isNumber = true;
-                for (char c : word) {
-                    if (!isdigit(c)) {
-                        isNumber = false;
-                        break;
-                    }
-                }
-                // Ha a szó nem szám, akkor az étel nevének tekintjük
-                if (!isNumber) {
-                    if (!name.empty()) {
-                        name += " ";
-                    }
-                    name += word;
-                } else {
-                    // Ha szám, akkor az a kalóriatartalom lesz
-                    calories = stoi(word);
-                    break; // Mivel csak egy kalóriatartalom lehet az adott sorban, kilépünk a ciklusból
-                }
-            }
-            foods.push_back(Food(name, calories));
-        }
-        file.close();
-    } else {
-        cout << "Unable to open file";
-    }
-    return foods;
 }

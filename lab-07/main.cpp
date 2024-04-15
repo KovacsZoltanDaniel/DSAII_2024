@@ -46,14 +46,14 @@ int main() {
     cout << "\n**************************************************\n" << endl;
 
     vector<Food> foods = readFoodsFromFile("foods.txt");
-    for (const auto& food : foods) {
-        cout << food.name << " " << food.calories << endl;
-    }
 
-    int maxCalories = 2000;
+    int maxCalories = 1000;
 
     vector<pair<string, int>> menu = selectMenu(foods, maxCalories);
 
-    printMenu(menu);
+    cout << "Panna menuje:\n";
+    for (int i=0;i < menu.size(); ++i) {
+        cout << "- " << menu[i].first << " " << menu[i].second << " kcal " << foods.at(i).gramm<< " gramm" <<endl;
+    }
     return 0;
 }

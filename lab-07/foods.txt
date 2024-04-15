@@ -1,6 +1,6 @@
-spenotos gomba 200
-zoldseg a lerben 250
-dioval toltott korte 300
-vanilias es kokuszos Panna cotta 400
-fuges salata 350
-citromtorta 500
+spenotos_gomba 200 0.5
+zoldseg_a_lerben 250 0.75
+dioval_toltott_korte 300 0.25
+vanilias_es_kokuszos_Panna_cotta 400 0.4
+fuges_salata 350 0.3
+citromtorta 500 0.6
