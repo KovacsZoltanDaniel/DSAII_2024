@@ -8,7 +8,8 @@
 #include <vector>
 
 using namespace std;
-
-void backtracking(vector<int>& nums, int target, vector<int>& combination, vector<vector<int>>& result, int start);
+void reszHalmazKiiro(int *array, int n);
+void reszHalmaz(int *array, int n, int k);
+bool igeretesBasic(int *array, int k, int n);
 
 #endif //LAB_08_FUNCTIONS_H

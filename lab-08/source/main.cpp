@@ -7,30 +7,27 @@ using namespace std;
 
 int main() {
     ifstream inputFile("input.txt");
+    if(!inputFile){
+        cout << "Hiba fajl megnyitaskor!" << endl;
+        return 1;
+    }
     int target;
     inputFile >> target;
-
-    vector<int> nums;
+    int n = 4;
+    int *array = new int[n];
+    int counter = 0;
     int num;
     while (inputFile >> num) {
-        nums.push_back(num);
+        array[counter] = num;
+        counter++;
     }
-    for(auto &oke:nums){
-        cout << oke << " ";
+    cout << "Bemeneti adatok: ";
+    for (int i = 0; i < n; ++i) {
+        cout << array[i] << " ";
     }
     cout << endl;
-    vector<vector<int>> result;
-    vector<int> combination;
-    backtracking(nums, target, combination, result, 0);
 
-    for (const auto& comb : result) {
-        cout << "[";
-        for (int i = 0; i < comb.size(); ++i) {
-            cout << comb[i];
-            if (i != comb.size() - 1) cout << ", ";
-        }
-        cout << "]" << endl;
-    }
+    reszHalmaz(array,n,1);
 
     return 0;
 }
