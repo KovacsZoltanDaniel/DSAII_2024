@@ -1,0 +1,7 @@
+5
+Informatika_alapjai 80 2
+Valoszinusegszamolas 60 1.5
+Operacios_rendszerek 90 3
+Fejlett_programozas 70 1
+Elektromos_berendezesek 85 2.5
+8 12
