@@ -1,0 +1,13 @@
+6
+Balazs Janos
+34 1 5
+Peter Eva
+28 2 3
+Farkas Bela
+45 1 8
+Jakab Anna
+37 2 6
+Bartha Gabor
+29 1 2
+Kovacs Kati
+41 2 7
