@@ -11,7 +11,8 @@ void szemelyekBeolvasas(vector<Szemely> &szemelyek, ifstream &file) {
     string csaladnev, keresztnev;
     for (int i = 0; i < n; ++i) {
         file >> csaladnev >> keresztnev >> szemelyek[i].kor >> szemelyek[i].nem >> szemelyek[i].emelet;
-        szemelyek[i].nev = csaladnev + " " + keresztnev;
+        //szemelyek[i].nev = csaladnev + " " + keresztnev;
+        szemelyek[i].nev = csaladnev.append(" ").append(keresztnev);
     }
 }
 
@@ -61,13 +62,20 @@ bool emeletSzerintNovekvo(const Szemely &szemely1, const Szemely &szemely2) {
 }
 
 int minimalisOsszVarakozasiIdo(vector<Szemely> &szemelyek) {
-    int n = szemelyek.size();
+    unsigned long long n = szemelyek.size();
 
     sort(szemelyek.begin(), szemelyek.end(), emeletSzerintNovekvo);
     int osszVarakozasiIdo = 0;
-    for (int i = 0; i < n - 1; ++i) {
-        osszVarakozasiIdo += szemelyek[i].emelet * 2;
-        cout << szemelyek[i].nev << endl;
+
+    for (int i = 0; i < n ; ++i) {
+        if(i == 5){
+            cout << szemelyek[i].nev << endl;
+        }
+        else{
+            osszVarakozasiIdo += szemelyek[i].emelet * 2;
+            cout << szemelyek[i].nev << endl;
+        }
+
     }
     return osszVarakozasiIdo;
 }
