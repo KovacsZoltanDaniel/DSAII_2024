@@ -25,6 +25,11 @@ void szemelyekKiirasa(const vector<Szemely>& szemelyek);
 void atlagEletkor(const vector<Szemely>& szemelyek);
 int minimalisOsszVarakozasiIdo(vector<Szemely>& szemlyek);
 bool emeletSzerintNovekvo(const Szemely& szemely1, const Szemely& szemely2);
+int binarySearch(const int *x, int n,int size, int target);
+void Queen(int *x, int n, int k);
+void bastya(int *x,int n, int k);
+bool igeretes(int *x, int k);
+bool igeretes2(int *x, int k);
 
 
 

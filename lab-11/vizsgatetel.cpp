@@ -79,3 +79,92 @@ int minimalisOsszVarakozasiIdo(vector<Szemely> &szemelyek) {
     }
     return osszVarakozasiIdo;
 }
+
+int binarySearch(const int *x, int n,int size, int target) {
+    if(n <= size){
+        int middle = (n+size)/2;
+        if(x[middle] == target){
+            return middle;
+        }
+        if(x[middle] < target){
+            return binarySearch(x,middle+1,size,target);
+        }
+        if(x[middle] > target){
+            return binarySearch(x,n,middle-1,target);
+        }
+    }
+    return -8;
+}
+
+void Queen(int *x, int n, int k) {
+    static int outputCount=0;
+    for(x[k] = 1; x[k] <= n; ++x[k]){
+        if(igeretes(x,k)){
+            if(k < n ){
+                Queen(x,n,k+1);
+            }
+            else{
+                for (int i = 1; i <= n; ++i) {
+                    for (int j = 1; j <= n; ++j) {
+                        if(x[j] == i){
+                            cout << " Q ";
+                        }
+                        else{
+                            cout << " * ";
+                        }
+                    }
+                    cout << endl;
+                }
+                outputCount++;
+                cout << endl;
+            }
+        }
+    }
+    if(k == 1){
+        cout << "Number of outputs: " << outputCount << endl;
+    }
+}
+
+bool igeretes(int *x, int k) {
+    for (int i = 1; i <= k-1 ; ++i) {
+        if(x[i] == x[k] || (k-i) == abs(x[k]-x[i])){
+            return false;
+        }
+    }
+    return true;
+}
+bool igeretes2(int *x, int k) {
+    for (int i = 1; i < k; ++i) {
+        if (x[i] == x[k]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+void bastya(int *x,int n, int k) {
+    static int outputCount = 0;
+    for (x[k] = 1; x[k] <= n; ++x[k]) {
+        if (igeretes2(x, k)) {
+            if (k == n) {
+                ++outputCount ;
+                for (int i = 1; i <= n; ++i) {
+                    for (int j = 1; j <= n; ++j) {
+                        if (x[j] == i) {
+                            cout << " R ";
+                        } else {
+                            cout << " * ";
+                        }
+                    }
+                    cout << endl;
+                }
+                cout << endl;
+            } else {
+                bastya(x, n, k + 1);
+            }
+        }
+    }
+    if (k == 1) {
+        cout << "Number of outputs: " << outputCount << endl;
+    }
+}
