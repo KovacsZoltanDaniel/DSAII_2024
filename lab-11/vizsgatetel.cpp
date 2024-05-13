@@ -107,10 +107,10 @@ void Queen(int *x, int n, int k) {
                 for (int i = 1; i <= n; ++i) {
                     for (int j = 1; j <= n; ++j) {
                         if(x[j] == i){
-                            cout << " Q ";
+                            cout << " K ";
                         }
                         else{
-                            cout << " * ";
+                            cout << " ! ";
                         }
                     }
                     cout << endl;
@@ -151,9 +151,9 @@ void bastya(int *x,int n, int k) {
                 for (int i = 1; i <= n; ++i) {
                     for (int j = 1; j <= n; ++j) {
                         if (x[j] == i) {
-                            cout << " R ";
+                            cout << " B ";
                         } else {
-                            cout << " * ";
+                            cout << " ! ";
                         }
                     }
                     cout << endl;

@@ -24,8 +24,10 @@ int main() {
     int size = sizeof(x) / sizeof(x[0]);
     int result = binarySearch(x,n,size,6);
     cout << result << endl;
-    cout << "Ird be az n erteket a sakktablahoz: " ;
+    cout << "Ird be az n erteket a sakktablahoz: " << endl;
+    cout << endl;
     cin >> n;
+    cout << endl;
     int *array = new int[n];
     Queen(x,n,1);
     bastya(x,n,1);
