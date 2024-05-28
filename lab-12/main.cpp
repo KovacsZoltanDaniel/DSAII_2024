@@ -24,6 +24,28 @@ int main() {
     cout << "A moho beka osszgyujtemenye: ";
     maxUgras(matrix);
 
+
+    ifstream infile("be.txt");
+    if (!infile) {
+        cerr << "Error opening file" << endl;
+        return 1;
+    }
+
+    int  director;
+    infile >> n >> director;
+
+    int boss[MAXN] = {0};
+    int employee, manager;
+    while (infile >> employee >> manager) {
+        boss[employee] = manager;
+    }
+
+    int x;
+    cout << "Enter the number of hours (x): ";
+    cin >> x;
+
+    findEmployeesWithinXHours(n, director, boss, x);
+
     return 0;
 }
 

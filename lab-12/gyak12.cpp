@@ -39,3 +39,30 @@ void maxUgras(vector<vector<int>>& matrix) {
 
     cout<< sum << endl;
 }
+
+void findEmployeesWithinXHours(int n, int director, int boss[], int x) {
+    int distance[MAXN];
+
+    for (int i = 1; i <= n; ++i) {
+        int current = i;
+        int dist = 0;
+
+        while (current != director && boss[current] != 0) {
+            current = boss[current];
+            dist++;
+        }
+
+        if (current == director) {
+            distance[i] = dist;
+        } else {
+            distance[i] = -1;
+        }
+    }
+
+
+    for (int i = 1; i <= n; ++i) {
+        if (distance[i] != -1 && distance[i] <= x) {
+            cout << i << endl;
+        }
+    }
+}

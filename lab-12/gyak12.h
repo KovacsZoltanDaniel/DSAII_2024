@@ -13,5 +13,9 @@ using namespace std;
 
 void maxUgras(vector<vector<int>>& matrix);
 
+const int MAXN = 100;
+
+void findEmployeesWithinXHours(int n, int director, int boss[], int x) ;
+
 
 #endif //LAB_12_GYAK12_H
